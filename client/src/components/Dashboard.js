@@ -88,7 +88,7 @@ const Dashboard = (props) => {
         </form>
         <div className='dashboard-main-container'>
             <div className='sentimate-box'>
-                <h1>CertiK Setiment Analysis</h1>
+                <h1>CertiK Sentiment Analysis</h1>
                 <div className='sent-analytics-conainter'>
                     <div style={{width: "150px", height: "150px"}}>
                         <Doughnut 
