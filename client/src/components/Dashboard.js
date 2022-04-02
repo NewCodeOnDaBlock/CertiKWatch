@@ -24,39 +24,60 @@ const Dashboard = (props) => {
     const [tweetcount, setTweetCount] = useState('');
     const [followercount, setFollowerCount] = useState('');
     const [likecount, setLikeCount] = useState('');
+    const [likecountarr, setLikeCountArr] = useState ();
+    const [tweetcountarr, setTweetCountArr] = useState();
+    const [followercountarr, setFollowerCountArr] = useState();
     const [keywordsearch, setKeywordSearch] = useState('');
     const [searchresult, setSearchResult] = useState('');
 
+
+    // const formatData = data => {
+    //     return data.map(el => {
+    //         return {
+    //             x: el[0].start,
+    //             y: el.data[0].tweet_count
+    //         }
+    //     })
+    // }
 
     useEffect(() => {
         socket?.on('likeCount', (likeCount) => { 
             if (!likeCount) {
                 setLikeCountError("Loading..")
             } else {
+                setLikeCountArr(likeCount.data[0])
                 setLikeCount(likeCount.meta.result_count.toString())
+                console.log('likecountarr:', likecountarr)
+                console.log('likecount:', likecount)
             }
         })
-    }, [socket, likecount])
+    }, [socket, likecount, likecountarr])
 
     useEffect(() => {
-        socket?.on('tweetCount', (tweetCount) => { 
-            if (!tweetCount) {
+        socket?.on('tweetCount', (tweetCounts) => { 
+            if (!tweetCounts) {
                 setTweetCountError("Loading..")
             } else {
-                setTweetCount(tweetCount.meta.total_tweet_count.toString());
+                setTweetCountArr(tweetCounts.data[0]);
+                setTweetCount(tweetCounts.meta.total_tweet_count.toString());
+                console.log('tweetcountarr:', tweetcountarr)
+                console.log('tweetcount', tweetcount);
             }
         })
-    }, [socket, tweetcount])
+    }, [socket, tweetcount, tweetcountarr])
 
     useEffect(() => {
         socket?.on('followerCount', (followCount) => { 
             if (!followCount) {
                 setFollowCountError("Loading..")
             } else {
+                setFollowerCountArr(followCount.data[0])
                 setFollowerCount(followCount.meta.result_count.toString())
+                console.log('followercountarr:', followercountarr)
+                console.log('followeracount', followercount)
             }
         })
-    }, [socket, followercount])
+    }, [socket, followercount, followercountarr])
 
 
     const keywordInput = (e) => {
@@ -182,15 +203,17 @@ const Dashboard = (props) => {
                                 datasets: [
                                     {
                                         label: '',
-                                        data: [ 
-                                        { x: 'Mon', y: 100 },
-                                        { x: 'Tues', y: 200 },
-                                        { x: 'Wed', y: 80 },
-                                        { x: 'Thurs', y: 300 },
-                                        { x: 'Fri', y: 500 },
-                                        { x: 'Sat', y: 200 },
-                                        { x: 'Sun', y: 700 },
-                                    ],
+                                        data: 
+                                        // likecountarr.tweetcount,
+                                        [
+                                            { x: 'Mon', y: 300 },
+                                            { x: 'Tues', y: 400 },
+                                            { x: 'Wed', y: 200 },
+                                            { x: 'Thurs', y: 300 },
+                                            { x: 'Fri', y: 500 },
+                                            { x: 'Sat', y: 200 },
+                                            { x: 'Sun', y: 700 },
+                                        ],
                                         showLine: true,
                                         fill: true,
                                         borderColor: 'rgb(75, 192, 192)',
@@ -237,6 +260,7 @@ const Dashboard = (props) => {
                                 datasets: [
                                     {
                                         label: '',
+                                        // tweetcountarr,
                                         data: [ 
                                         { x: 'Mon', y: 20 },
                                         { x: 'Tues', y: 10 },

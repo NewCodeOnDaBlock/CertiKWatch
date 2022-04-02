@@ -17,6 +17,7 @@ const tweetCountURL = 'https://api.twitter.com/2/tweets/counts/recent?query=from
 const followersURL = 'https://api.twitter.com/2/users/993673575230996480/followers';
 const likesURL = 'https://api.twitter.com/2/users/993673575230996480/liked_tweets';
 
+
 async function fetchTweets(socket) { 
     const tweetCounter = await needle.get(tweetCountURL , {
         headers:{
@@ -59,7 +60,6 @@ async function fetchLikes(socket) {
         try{
             const json = data;
             socket.emit('likeCount', json)
-            // console.log(json)
         } catch (error){
             console.log('error fetching likes data')
         }
