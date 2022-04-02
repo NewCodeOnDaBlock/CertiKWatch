@@ -1,0 +1,227 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+h1 {
+    font-size: 18px;
+    color: rgb(88, 91, 93);
+}
+h3 {
+    font-size: 14px;
+    color: rgb(88, 91, 93);
+}
+img {
+    width: 18px;
+    height: 18px;
+}
+.colorBoxOne {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #2cc479;
+    display: block;
+}
+.colorBoxTwo {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #F5A623;
+    display: block;
+}
+.colorBoxThree {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #5A678A;
+    display: block;
+}
+select {
+    border-radius: 5px;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    padding: 5px;
+    font-size: 12px;
+    color: rgb(88, 91, 93);
+    cursor: pointer;
+}
+form {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+input {
+    width: 400px;
+    height: 25px;
+    border: 1px solid rgba(128, 128, 128, 0.404);
+    border-radius: 5px;
+    padding-left: 5px;
+}
+button {
+    width: 130px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: #FF445B;
+}
+button:hover {
+    background-color: #FFD2D8;
+}
+.dashboard-main-container {
+    width: 80vw;;
+    height: 550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.322);;
+    border: none;
+}
+.sentimate-box {
+    width: 30%;
+    height: 85%;
+}
+.sent-analytics-conainter {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: rgb(246, 246, 246);
+}
+.doughnut-mid {
+    width: 80%;
+    height: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.06);
+}
+.labelsent-section {
+    font-size: 12px;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.label-box {
+    width: 45%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.change-box {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.label-box-score{
+    width: 45%;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.social-box {
+    width: 65%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.twitter-activity-container{
+    width: 100%;
+    height: 42%;
+    display: flex;
+    border-radius: 5px;
+    background-color: rgb(246, 246, 246);
+}
+.keywords-title{
+    width: 100%;
+    font-size: 10px;
+}
+.keywords-title h1 {
+    font-size: 14px;
+}
+.keyword-container {
+    position: relative;
+    width: 100%;
+    height: 42%;
+    display: flex;
+    border-radius: 5px;
+    background-color: rgb(246, 246, 246);
+}
+.left-of-keyword{
+    width: 50%;
+    height: 100%;
+}
+.right-of-keyword{
+    width: 50%;
+    height: 100%;
+}
+.title-with-select-container {
+    width: 100%;
+    height:30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-with-select-container h1 {
+    font-size: 14px;
+}
+.total-title {
+    width: 90%;
+    height: 30px;
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.total-title h1 {
+    padding-left: 15px;
+    font-size: 14px;
+}
+.selectOption-container {
+    width: 185px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.total-favs {
+    width: 33%;
+    height: 100%;
+    border-right: 1px solid rgba(190, 190, 190, 0.416);
+}
+.total-tweets {
+    width: 33%;
+    height: 100%;
+}
+.total-follows {
+    width: 33%;
+    height: 100%;
+    border-left: 1px solid rgba(190, 190, 190, 0.416);
+}

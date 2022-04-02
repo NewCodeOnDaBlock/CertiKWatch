@@ -1,0 +1,76 @@
+.shib {
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    font-size: 50px;
+}
+.moon {
+    position: absolute;
+    font-size: 20px;
+    top: 50px;
+    left: 400px;
+}
+.PCS {
+    position: absolute;
+    font-size: 20px;
+    top: 40px;
+    left: 200px;
+}
+.crypto {
+    position: absolute;
+    font-size: 40px;
+    top: 70px;
+    left: 200px; 
+}
+.ada {
+    position: absolute;
+    font-size: 30px;
+    top: 70px;
+    left: 100px; 
+}
+.MANA {
+    position: absolute;
+    left: 30px;
+    top: 170px;
+}
+.HBAR {
+    position: absolute;
+    left: 180px;
+    top: 120px;
+}
+.algo {
+    position: absolute;
+    font-size: 70px;
+    right: 50px;
+    top: 20px;
+}
+.community {
+    position: absolute;
+    font-size: 30px;
+    right: 90px;
+    top: 150px; 
+}
+.burn {
+    position: absolute;
+    font-size: 20px;
+    right: 300px;
+    top: 100px; 
+}
+.rug {
+    position: absolute;
+    font-size: 10px;
+    right: 400px;
+    top: 170px; 
+}
+.bnb {
+    position: absolute;
+    font-size: 40px;
+    right: 300px;
+    top: 120px; 
+}
+.sol {
+    position: absolute;
+    font-size: 30px;
+    right: 90px;
+    top: 110px; 
+}
