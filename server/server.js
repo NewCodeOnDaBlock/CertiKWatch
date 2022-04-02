@@ -28,6 +28,7 @@ async function fetchTweets(socket) {
         try {
             const json = data;
             socket.emit('tweetCount', json)
+            console.log('tweetCoundt data from server:', json)
         } catch (error) {
             console.log('error fetching tweet count data')
         }

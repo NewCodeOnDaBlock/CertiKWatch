@@ -31,21 +31,21 @@ const Dashboard = (props) => {
     const [searchresult, setSearchResult] = useState('');
 
 
-    // const formatData = data => {
-    //     return data.map(el => {
-    //         return {
-    //             x: el[0].start,
-    //             y: el.data[0].tweet_count
-    //         }
-    //     })
-    // }
+    const formatData = data => {
+        return data.map(el => {
+            return {
+                x: el.start,
+                y: el.tweet_count
+            }
+        })
+    }
 
     useEffect(() => {
         socket?.on('likeCount', (likeCount) => { 
             if (!likeCount) {
                 setLikeCountError("Loading..")
             } else {
-                setLikeCountArr(likeCount.data[0])
+                setLikeCountArr(likeCount?.data[0])
                 setLikeCount(likeCount.meta.result_count.toString())
                 console.log('likecountarr:', likecountarr)
                 console.log('likecount:', likecount)
@@ -58,7 +58,9 @@ const Dashboard = (props) => {
             if (!tweetCounts) {
                 setTweetCountError("Loading..")
             } else {
-                setTweetCountArr(tweetCounts.data[0]);
+                setTweetCountArr({
+                    day: formatData(tweetCounts?.data)
+                });
                 setTweetCount(tweetCounts.meta.total_tweet_count.toString());
                 console.log('tweetcountarr:', tweetcountarr)
                 console.log('tweetcount', tweetcount);
@@ -71,7 +73,7 @@ const Dashboard = (props) => {
             if (!followCount) {
                 setFollowCountError("Loading..")
             } else {
-                setFollowerCountArr(followCount.data[0])
+                setFollowerCountArr(followCount?.data[0])
                 setFollowerCount(followCount.meta.result_count.toString())
                 console.log('followercountarr:', followercountarr)
                 console.log('followeracount', followercount)
@@ -260,16 +262,7 @@ const Dashboard = (props) => {
                                 datasets: [
                                     {
                                         label: '',
-                                        // tweetcountarr,
-                                        data: [ 
-                                        { x: 'Mon', y: 20 },
-                                        { x: 'Tues', y: 10 },
-                                        { x: 'Wed', y: 40 },
-                                        { x: 'Thurs', y: 20 },
-                                        { x: 'Fri', y: 60 },
-                                        { x: 'Sat', y: 50 },
-                                        { x: 'Sun', y: 20 },
-                                    ],
+                                        data: tweetcountarr.day,
                                         showLine: true,
                                         fill: false,
                                         borderColor: 'rgb(75, 192, 192)',
