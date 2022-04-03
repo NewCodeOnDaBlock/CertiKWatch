@@ -7,6 +7,7 @@ import { Doughnut, Line, Bar } from 'react-chartjs-2';
 import 'chartjs-adapter-moment';
 import '../style/Dashboard.css';
 import '../style/keyword.css';
+import moment from 'moment';
 import {Chart, ArcElement, CategoryScale, LinearScale, PointElement, LineController, LineElement, Filler} from 'chart.js'
 import 'chart.js/auto'
 Chart.register(ArcElement, CategoryScale, LinearScale, PointElement, LineController, LineElement, Filler);
@@ -34,7 +35,7 @@ const Dashboard = (props) => {
     const formatData = data => {
         return data.map(el => {
             return {
-                x: el.start,
+                x: moment(el.start).format('Do'),
                 y: el.tweet_count
             }
         })
@@ -262,7 +263,7 @@ const Dashboard = (props) => {
                                 datasets: [
                                     {
                                         label: '',
-                                        data: tweetcountarr.day,
+                                        data: tweetcountarr?.day,
                                         showLine: true,
                                         fill: false,
                                         borderColor: 'rgb(75, 192, 192)',
@@ -270,26 +271,26 @@ const Dashboard = (props) => {
                                         borderWidth: 2,
                                         responsive:true
                                     },
-                                    {
-                                        label: '',
-                                        data: [ 
-                                        { x: 'Mon', y: 40 },
-                                        { x: 'Tues', y: 10 },
-                                        { x: 'Wed', y: 105 },
-                                        { x: 'Thurs', y: 20 },
-                                        { x: 'Fri', y: 100 },
-                                        { x: 'Sat', y: 90 },
-                                        { x: 'Sun', y: 90 },
-                                    ],
-                                        showLine: true,
-                                        fill: false,
-                                        borderColor: '#F5A623',
-                                        pointBorderWidth: 1,
-                                        pointHoverRadius: 5,
-                                        pointRadius: 0,
-                                        borderWidth: 2,
-                                        responsive:true
-                                    },
+                                    // {
+                                    //     label: '',
+                                    //     data: [ 
+                                    //     { x: 'Mon', y: 2 },
+                                    //     { x: 'Tues', y: 0 },
+                                    //     { x: 'Wed', y: 5 },
+                                    //     { x: 'Thurs', y: 9 },
+                                    //     { x: 'Fri', y: 5 },
+                                    //     { x: 'Sat', y:10 },
+                                    //     { x: 'Sun', y: 12 },
+                                    // ],
+                                    //     showLine: true,
+                                    //     fill: false,
+                                    //     borderColor: '#F5A623',
+                                    //     pointBorderWidth: 1,
+                                    //     pointHoverRadius: 5,
+                                    //     pointRadius: 0,
+                                    //     borderWidth: 2,
+                                    //     responsive:true
+                                    // },
                                 ],
                             }}   
                             options={{
