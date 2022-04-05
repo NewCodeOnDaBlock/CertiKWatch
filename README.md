@@ -1,2 +1,3 @@
 
-![dashboard](https://i.ibb.co/hD3wbn0/Certik-Dash.jpg)
+![dashboard](https://i.ibb.co/zhkq6kG/Certik-Dash.png)
+
